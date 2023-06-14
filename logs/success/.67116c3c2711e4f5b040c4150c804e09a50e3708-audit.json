@@ -1,0 +1,50 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/sakin/code/mine/ph/ums/logs/success/.67116c3c2711e4f5b040c4150c804e09a50e3708-audit.json",
+    "files": [
+        {
+            "date": 1686428250606,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/success/ums-2023-11-06-02-success.log",
+            "hash": "013e5f3e20343e4860a321f8bb4016af0fb7d1597343561d153638087755595a"
+        },
+        {
+            "date": 1686430851480,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/success/ums-2023-11-06-03-success.log",
+            "hash": "9f44f00e9ec7be2b21c80f3b66215fdfea73667111e48615420f89ebf5591d86"
+        },
+        {
+            "date": 1686486390469,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/success/ums-2023-11-06-18-success.log",
+            "hash": "39f1e6b3525eeaf457bd8cdbd36d2b0cd78dd38ab57e5d097231d55e07f0f581"
+        },
+        {
+            "date": 1686488439699,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/success/ums-2023-11-06-19-success.log",
+            "hash": "0c6325937484c4086d8aa89c692ed1b2ddf7258986f6c3bbbfa87d83521b94a9"
+        },
+        {
+            "date": 1686493169210,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/success/ums-2023-11-06-20-success.log",
+            "hash": "3862bfb6263210560c32b8dc29e645af413944d7314724c20d6cb854b225ef16"
+        },
+        {
+            "date": 1686512867728,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/success/ums-2023-12-06-01-success.log",
+            "hash": "68040c9c06082d6552b657b57f5bc59b372af84f62d1424472c8310dcf7e1515"
+        },
+        {
+            "date": 1686517713497,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/success/ums-2023-12-06-03-success.log",
+            "hash": "932fab10a37bb00d6868dfa617b9defa9441a1d874d1f39696a15302b6964df2"
+        },
+        {
+            "date": 1686773180513,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/success/ums-2023-15-06-02-success.log",
+            "hash": "28230c73e58741eb3ca43b91927177820e2860fd9d578ffcf9c80ee9cfe12b5d"
+        }
+    ],
+    "hashType": "sha256"
+}
