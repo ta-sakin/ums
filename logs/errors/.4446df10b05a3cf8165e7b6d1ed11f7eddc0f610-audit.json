@@ -44,6 +44,21 @@
             "date": 1686773180515,
             "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-15-06-02-error.log",
             "hash": "bb3b1acbac09b55ef684d895b5e9d4c06c94addd65fc12092100e1aa6b3bcff9"
+        },
+        {
+            "date": 1686860357255,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-16-06-02-error.log",
+            "hash": "2999a908e95924732ec9eb4f060b9a335d868abc3a360039a820dd95b442abf1"
+        },
+        {
+            "date": 1687013237356,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-17-06-20-error.log",
+            "hash": "c854bc97b63a595e830b315e3eae1e284682e8edc9b8b4ab6ee3e3ba6ed27261"
+        },
+        {
+            "date": 1687206721040,
+            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-20-06-02-error.log",
+            "hash": "09cdfc89eafec4cdcc58995fb76d132b9120939b007e9fe3efbfac2ea2e5fc38"
         }
     ],
     "hashType": "sha256"

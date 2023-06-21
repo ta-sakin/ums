@@ -1,8 +1,14 @@
 import httpStatus from 'http-status';
-import { ISemester } from './semester.interface';
+import {
+  IGenericResponse,
+  IPaginationOptions,
+  ISemester,
+} from './semester.interface';
 import { Semester } from './semster.model';
 import ApiError from '../../../errors/ApiError';
 import { semesterTitleCodeMapper } from './semester.constant';
+import { calculatePagination } from '../../helpers/helper';
+import { SortOrder } from 'mongoose';
 
 const createSemesterService = async (
   payload: ISemester
@@ -14,4 +20,23 @@ const createSemesterService = async (
   return result;
 };
 
-export { createSemesterService };
+const getAllSemestersService = async (
+  payload: IPaginationOptions
+): Promise<IGenericResponse<ISemester[]>> => {
+  const { page, limit, skip, sortBy, sortOrder } = calculatePagination(payload);
+  const sortFilter: { [key: string]: SortOrder } = {};
+  if (sortBy && sortOrder) {
+    sortFilter[sortBy] = sortOrder;
+  }
+  const result = await Semester.find().sort(sortFilter).skip(skip).limit(limit);
+  const count = await Semester.countDocuments();
+  return {
+    meta: {
+      page,
+      limit,
+      total: count,
+    },
+    data: result,
+  };
+};
+export { createSemesterService, getAllSemestersService };

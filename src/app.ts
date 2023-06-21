@@ -1,4 +1,4 @@
-import express, { Application, Request, Response } from 'express';
+import express, { Application, NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import router from './app/routes';
@@ -15,6 +15,16 @@ app.get('/', async (req: Request, res: Response) => {
   res.send('Server is running');
 });
 
+//global error handler
 app.use(globalErrorHandler);
 
+//not found route
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.status(404).send({
+    success: false,
+    message: 'Not found',
+    errorMessages: [{ path: req.originalUrl, message: 'API route not found' }],
+  });
+  next();
+});
 export default app;
