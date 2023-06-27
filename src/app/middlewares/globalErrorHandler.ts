@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
 /* eslint-disable no-unused-expressions */
-import { ErrorRequestHandler, Request, Response } from 'express';
+import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
 import { GenericErrorMessage } from '../../types/error';
 import config from '../../config';
 import handleValidationError from '../../errors/validationError';
@@ -10,10 +10,12 @@ import ApiError from '../../errors/ApiError';
 import { errorLogger } from '../../common/logger';
 import { ZodError } from 'zod';
 import handleZodError from '../../errors/handleZodError';
+import handleCastError from '../../errors/handleCastError';
 const globalErrorHandler: ErrorRequestHandler = (
   err,
   req: Request,
-  res: Response
+  res: Response,
+  next: NextFunction
 ) => {
   config.env === 'development'
     ? console.log('Global error handler', err)
@@ -32,8 +34,12 @@ const globalErrorHandler: ErrorRequestHandler = (
     statusCode = simplifiedZodError.statusCode;
     message = simplifiedZodError.message;
     errorMessages = simplifiedZodError.errorMessages;
+  } else if (err?.name?.toLowerCase() === 'casterror') {
+    const simplifiedZodError = handleCastError(err);
+    statusCode = simplifiedZodError.statusCode;
+    message = simplifiedZodError.message;
+    errorMessages = simplifiedZodError.errorMessages;
   } else if (err instanceof ApiError) {
-    console.log('api error');
     statusCode = err?.statusCode;
     message = err?.message;
     errorMessages = err?.message

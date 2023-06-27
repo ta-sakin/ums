@@ -1,7 +1,16 @@
 import { Router } from 'express';
-import { createSemesterZodSchema } from './semester.validation';
+import {
+  createSemesterZodSchema,
+  updateSemesterZodSchema,
+} from './semester.validation';
 import validateRequest from '../../middlewares/validateRequest';
-import { createSemester, getAllSemesters } from './semester.controller';
+import {
+  createSemester,
+  getAllSemesters,
+  getOneSemester,
+  updateSemester,
+  deleteSemester,
+} from './semester.controller';
 
 const router = Router();
 router.post(
@@ -10,5 +19,8 @@ router.post(
   createSemester
 );
 
-router.get('/get-all-semesters', getAllSemesters);
+router.get('/:id', getOneSemester);
+router.patch('/:id', validateRequest(updateSemesterZodSchema), updateSemester);
+router.delete('/:id', deleteSemester);
+router.get('/', getAllSemesters);
 export const SemesterRoutes = router;

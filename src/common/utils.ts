@@ -1,4 +1,4 @@
-const genQueryObj = <T extends Record<string, unknown>, k extends keyof T>(
+const getQueryObj = <T extends Record<string, unknown>, k extends keyof T>(
   obj: T,
   keys: k[]
 ) => {
@@ -11,4 +11,4 @@ const genQueryObj = <T extends Record<string, unknown>, k extends keyof T>(
   return finalObj;
 };
 
-export default genQueryObj;
+export default getQueryObj;
