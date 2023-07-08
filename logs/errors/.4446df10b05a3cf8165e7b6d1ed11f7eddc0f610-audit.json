@@ -1,60 +1,60 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "/Users/sakin/code/mine/ph/ums/logs/errors/.4446df10b05a3cf8165e7b6d1ed11f7eddc0f610-audit.json",
+  "files": [
+    {
+      "date": 1687206721040,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-20-06-02-error.log",
+      "hash": "09cdfc89eafec4cdcc58995fb76d132b9120939b007e9fe3efbfac2ea2e5fc38"
     },
-    "auditLog": "/Users/sakin/code/mine/ph/ums/logs/errors/.4446df10b05a3cf8165e7b6d1ed11f7eddc0f610-audit.json",
-    "files": [
-        {
-            "date": 1687206721040,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-20-06-02-error.log",
-            "hash": "09cdfc89eafec4cdcc58995fb76d132b9120939b007e9fe3efbfac2ea2e5fc38"
-        },
-        {
-            "date": 1687378837835,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-22-06-02-error.log",
-            "hash": "2612fec79234faaef7ba4c2464118c06e3cd860f1c91099d6e1bed5f1d3bec7b"
-        },
-        {
-            "date": 1687635696144,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-25-06-01-error.log",
-            "hash": "81383817849d8deaa0fdfd9497dd0a033819ae558b66755982ed1ced2255a8d1"
-        },
-        {
-            "date": 1687636875703,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-25-06-02-error.log",
-            "hash": "fcd6bb540cdc2923040151dd9412f694e94fea5a1cd160d4b0ff9fb96e4a39b0"
-        },
-        {
-            "date": 1687701833185,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-25-06-20-error.log",
-            "hash": "bd95c8b1f66488105cf988a65a2b1212d1fef4388390d66a591aa395824492d2"
-        },
-        {
-            "date": 1687718669048,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-26-06-00-error.log",
-            "hash": "e36c2b68c219b87bb3515dee5c1172a6e94f598a455e36c3d360f293af408518"
-        },
-        {
-            "date": 1687723036527,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-26-06-01-error.log",
-            "hash": "b49c63f3834b694aa9ebbad169eb4c8475dea44d85f2c3beabdaef71be7f133f"
-        },
-        {
-            "date": 1687723202867,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-26-06-02-error.log",
-            "hash": "1ac8cbbb2349c92bbe6c508fba699d04abd6b01d6ed033e03383cfe2ccff8c64"
-        },
-        {
-            "date": 1687897837164,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-28-06-02-error.log",
-            "hash": "5f38ddd20c8995409a912e3eaaea823fd5466219f3562883e5a06838d40f5b9c"
-        },
-        {
-            "date": 1688240131690,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-02-07-01-error.log",
-            "hash": "f5f8ae75d5895a567d869af7af73ef6ff972fba284a96845c6e6cd64a0033280"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1687378837835,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-22-06-02-error.log",
+      "hash": "2612fec79234faaef7ba4c2464118c06e3cd860f1c91099d6e1bed5f1d3bec7b"
+    },
+    {
+      "date": 1687635696144,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-25-06-01-error.log",
+      "hash": "81383817849d8deaa0fdfd9497dd0a033819ae558b66755982ed1ced2255a8d1"
+    },
+    {
+      "date": 1687636875703,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-25-06-02-error.log",
+      "hash": "fcd6bb540cdc2923040151dd9412f694e94fea5a1cd160d4b0ff9fb96e4a39b0"
+    },
+    {
+      "date": 1687701833185,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-25-06-20-error.log",
+      "hash": "bd95c8b1f66488105cf988a65a2b1212d1fef4388390d66a591aa395824492d2"
+    },
+    {
+      "date": 1687718669048,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-26-06-00-error.log",
+      "hash": "e36c2b68c219b87bb3515dee5c1172a6e94f598a455e36c3d360f293af408518"
+    },
+    {
+      "date": 1687723036527,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-26-06-01-error.log",
+      "hash": "b49c63f3834b694aa9ebbad169eb4c8475dea44d85f2c3beabdaef71be7f133f"
+    },
+    {
+      "date": 1687723202867,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-26-06-02-error.log",
+      "hash": "1ac8cbbb2349c92bbe6c508fba699d04abd6b01d6ed033e03383cfe2ccff8c64"
+    },
+    {
+      "date": 1687897837164,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-28-06-02-error.log",
+      "hash": "5f38ddd20c8995409a912e3eaaea823fd5466219f3562883e5a06838d40f5b9c"
+    },
+    {
+      "date": 1688240131690,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-02-07-01-error.log",
+      "hash": "f5f8ae75d5895a567d869af7af73ef6ff972fba284a96845c6e6cd64a0033280"
+    }
+  ],
+  "hashType": "sha256"
 }

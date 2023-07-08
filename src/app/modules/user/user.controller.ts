@@ -3,7 +3,7 @@ import { createUser } from './user.service';
 
 const createOneUser: RequestHandler = async (req, res, next) => {
   try {
-    const { user } = req.body;
+    const user = req.body;
     const result = await createUser(user);
 
     res.status(200).json({

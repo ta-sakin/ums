@@ -5,7 +5,13 @@ import { User } from './user.model';
 import ApiError from '../../../errors/ApiError';
 
 const createUser = async (user: IUser): Promise<IUser | null> => {
-  const id = await generateId();
+  const id = await generateId(
+    {
+      year: new Date().getFullYear(),
+      code: Math.floor(Math.random() * 10),
+    },
+    user.role
+  );
   user.id = id;
   if (!user.password) {
     user.password = config.defautUserPass as string;

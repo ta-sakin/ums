@@ -6,10 +6,25 @@ const getLastUserId = async () => {
     .lean();
   return user?.id;
 };
-export const generateId = async (): Promise<string> => {
+
+type IAcademicInfo = {
+  year: number;
+  code: number;
+};
+export const generateId = async (
+  academicInfo: IAcademicInfo,
+  role: string
+): Promise<string> => {
   let generatedId: string | undefined = await getLastUserId();
   if (generatedId) {
     generatedId = (parseInt(generatedId) + 1).toString().padStart(5, '0');
   }
-  return generatedId || (1).toString().padStart(5, '0');
+  let startPad = `${academicInfo.year
+    .toString()
+    .slice(2)}${academicInfo.code.toString()}`;
+  if (role === 'faculty') {
+    startPad = 'F-';
+  }
+  const id = generatedId || (1).toString().padStart(5, '0');
+  return `${startPad}${id}`;
 };
