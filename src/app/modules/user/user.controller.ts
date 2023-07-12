@@ -1,10 +1,11 @@
 import { RequestHandler } from 'express';
-import { createUser } from './user.service';
+import { createStudent } from './user.service';
+import { User } from './user.model';
 
 const createOneUser: RequestHandler = async (req, res, next) => {
   try {
-    const user = req.body;
-    const result = await createUser(user);
+    const { student, ...user } = req.body;
+    const result = await createStudent(student, user);
 
     res.status(200).json({
       success: true,
@@ -15,4 +16,29 @@ const createOneUser: RequestHandler = async (req, res, next) => {
     next(error);
   }
 };
-export { createOneUser };
+const getUsers: RequestHandler = async (req, res, next) => {
+  try {
+    const result = await User.find({}).populate({
+      path: 'student',
+      populate: [
+        {
+          path: 'semester',
+        },
+        {
+          path: 'faculty',
+        },
+        {
+          path: 'department',
+        },
+      ],
+    });
+    res.status(200).json({
+      success: true,
+      message: 'Fetched users successfully',
+      data: result,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+export { createOneUser, getUsers };

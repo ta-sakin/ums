@@ -6,5 +6,5 @@ export default {
   env: process.env.NODE_ENV,
   port: process.env.PORT,
   databaseUrl: process.env.MONGODB_URL,
-  defautUserPass: process.env.DEFAULT_USER_PASS,
+  defautStudentPass: process.env.DEFAULT_STUDENT_PASS,
 };
