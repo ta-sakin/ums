@@ -42,10 +42,7 @@ const updateSemesterService = async (
   });
   return result;
 };
-const deleteSemesterService = async (id: string): Promise<ISemester | null> => {
-  const result = await Semester.findByIdAndDelete(id);
-  return result;
-};
+
 const getAllSemestersService = async (
   filters: IFilters,
   payload: IPaginationOptions
@@ -81,10 +78,13 @@ const getAllSemestersService = async (
     sortFilter[sortBy] = sortOrder;
   }
   const result = await Semester.find(searchBy)
+    .populate('semester')
+    .populate('faculty')
+    .populate('department')
     .sort(sortFilter)
     .skip(skip)
     .limit(limit);
-  const count = await Semester.countDocuments();
+  const count = await Semester.countDocuments(searchBy);
   return {
     meta: {
       page,
@@ -96,7 +96,17 @@ const getAllSemestersService = async (
 };
 
 const getOneSemesterService = async (id: string): Promise<ISemester | null> => {
-  const result = await Semester.findById(id);
+  const result = await Semester.findById(id)
+    .populate('semester')
+    .populate('faculty')
+    .populate('department');
+  return result;
+};
+const deleteSemesterService = async (id: string): Promise<ISemester | null> => {
+  const result = await Semester.findByIdAndDelete(id)
+    .populate('semester')
+    .populate('faculty')
+    .populate('department');
   return result;
 };
 export {
