@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { IStudent, IStudentFilters, UserName } from './student.interface';
+import { IStudent, IStudentFilters } from './student.interface';
 import { Student } from './student.model';
 import { studentSearchableFields } from './student.constant';
 import { calculatePagination } from '../../helpers/helper';
@@ -10,17 +10,36 @@ const updateStudentService = async (
   id: string,
   payload: Partial<IStudent>
 ): Promise<IStudent | null> => {
-  const { name, ...studentData } = payload;
+  const { name, guardian, localGuardian, ...studentData } = payload;
   const updateStudent: any = { ...studentData };
   if (name && Object.keys(name).length) {
     Object.keys(name).forEach((key: string) => {
       if (typeof key === 'string') {
-        const nameKey = key as keyof UserName; // Assuming UserName is the type of the `name` property
-        updateStudent[`name.${key}`] = name[nameKey];
+        const nameKey = `name.${key}` as keyof Partial<IStudent>; // Assuming UserName is the type of the `name` property
+        updateStudent[nameKey] = name[key as keyof typeof name];
       }
     });
   }
-  const result = await Student.findByIdAndUpdate({ _id: id }, payload, {
+  if (guardian && Object.keys(guardian).length) {
+    Object.keys(guardian).forEach((key: string) => {
+      if (typeof key === 'string') {
+        const guardianKey = `guardian.${key}` as keyof Partial<IStudent>; // Assuming Userguardian is the type of the `guardian` property
+        updateStudent[guardianKey] = guardian[key as keyof typeof guardian];
+      }
+    });
+  }
+  if (localGuardian && Object.keys(localGuardian).length) {
+    Object.keys(localGuardian).forEach((key: string) => {
+      if (typeof key === 'string') {
+        const localGuardianKey =
+          `localGuardian.${key}` as keyof Partial<IStudent>; // Assuming UserlocalGuardian is the type of the `localGuardian` property
+        updateStudent[localGuardianKey] =
+          localGuardian[key as keyof typeof localGuardian];
+      }
+    });
+  }
+
+  const result = await Student.findOneAndUpdate({ id }, updateStudent, {
     new: true,
   });
   return result;

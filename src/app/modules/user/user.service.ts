@@ -44,7 +44,7 @@ const createStudent = async (
 
     newUser = createdUser[0];
 
-    session.commitTransaction();
+    await session.commitTransaction();
     session.endSession();
   } catch (error) {
     session.abortTransaction();
