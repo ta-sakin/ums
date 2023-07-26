@@ -9,7 +9,7 @@ import { ISemester } from '../semester/semester.interface';
 import mongoose from 'mongoose';
 import { Student } from '../student/student.model';
 import httpStatus from 'http-status';
-
+import bcrypt from 'bcrypt';
 const createStudent = async (
   student: IStudent,
   user: IUser
@@ -17,6 +17,7 @@ const createStudent = async (
   if (!user.password) {
     user.password = config.defautStudentPass as string;
   }
+  user.password = await bcrypt.hash(user.password, config.bcryptSalt);
   user.role = 'student';
 
   const semester: ISemester | null = await Semester.findById(student.semester);
