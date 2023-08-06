@@ -9,5 +9,5 @@ export default {
   defautStudentPass: process.env.DEFAULT_STUDENT_PASS,
   defautFacultyPass: process.env.DEFAULT_FACULTY_PASS,
   defautAdminPass: process.env.DEFAULT_ADMIN_PASS,
-  bcryptSalt: 12,
+  bcryptSaltRound: 12,
 };
