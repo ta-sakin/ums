@@ -1,4 +1,0 @@
-Thu Jul 13 2023 2:31:50 [ums] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
-Thu Jul 13 2023 2:33:6 [ums] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
-Thu Jul 13 2023 2:34:54 [ums] error: Transaction with { txnNumber: 1 } has been aborted.
-Thu Jul 13 2023 2:39:45 [ums] error: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_COMMITTED]

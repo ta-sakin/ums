@@ -23,7 +23,10 @@ export type IUser = {
 export type UserModel = {
   isUserExits(
     id: string
-  ): Promise<Pick<IUser, 'id' | 'password' | 'needsPasswordChange'> | null>;
+  ): Promise<Pick<
+    IUser,
+    'id' | 'password' | 'role' | 'needsPasswordChange'
+  > | null>;
   isPasswordCorrect(
     currentPassword: string,
     savedPassword: string
