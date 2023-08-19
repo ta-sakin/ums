@@ -1,11 +1,12 @@
 import httpStatus from 'http-status';
 import catchAsync from '../../../common/catchAsync';
 import sendResponse from '../../../common/sendResponse';
-import { loginUserService } from './auth.service';
+import { changePasswordService, loginUserService } from './auth.service';
 import { accessTokenService } from './auth.service';
 import config from '../../../config';
+import { Request, Response } from 'express';
 
-const loginUser = catchAsync(async (req, res) => {
+const loginUser = catchAsync(async (req: Request, res: Response) => {
   const { ...loginData } = req.body;
   const { refreshToken, ...rest } = await loginUserService(loginData);
 
@@ -20,7 +21,7 @@ const loginUser = catchAsync(async (req, res) => {
     message: 'User logged in successfully',
   });
 });
-const getAccessToken = catchAsync(async (req, res) => {
+const getAccessToken = catchAsync(async (req: Request, res: Response) => {
   const { refreshToken } = req.cookies;
 
   const result = await accessTokenService(refreshToken);
@@ -36,4 +37,16 @@ const getAccessToken = catchAsync(async (req, res) => {
     message: 'Access token generated successfully',
   });
 });
-export { loginUser, getAccessToken };
+const changePassword = catchAsync(async (req: Request, res: Response) => {
+  const user = req.user;
+  const { ...passwords } = req.body;
+  await changePasswordService(passwords, user);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    data: 'Password changed successfully',
+    success: true,
+    message: 'User logged in successfully',
+  });
+});
+export { loginUser, getAccessToken, changePassword };

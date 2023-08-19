@@ -1,7 +1,13 @@
 import { Router } from 'express';
 import validateRequest from '../../middlewares/validateRequest';
-import { LoginZodSchema, RefreshTokenZodSchema } from './auth.validation';
+import {
+  ChangePasswordZodSchema,
+  LoginZodSchema,
+  RefreshTokenZodSchema,
+} from './auth.validation';
 import { getAccessToken, loginUser } from './auth.controller';
+import { auth } from '../../middlewares/auth';
+import { ENUM_USER_ROLE } from '../../../enums/user';
 
 const router = Router();
 
@@ -10,6 +16,16 @@ router.get(
   '/access-token',
   validateRequest(RefreshTokenZodSchema),
   getAccessToken
+);
+
+router.post(
+  '/change-password',
+  auth(
+    ENUM_USER_ROLE.SUPER_ADMIN,
+    ENUM_USER_ROLE.ADMIN,
+    ENUM_USER_ROLE.STUDENT
+  ),
+  validateRequest(ChangePasswordZodSchema)
 );
 
 export const AuthRoutes = router;

@@ -21,7 +21,7 @@ const globalErrorHandler: ErrorRequestHandler = (
     ? console.log('Global error handler', err)
     : errorLogger.error(err);
   let statusCode = 500;
-  let message = 'Interal server error';
+  let message = 'Internal server error';
 
   let errorMessages: GenericErrorMessage[] = [];
   if (err?.name?.toLowerCase() === 'validationerror') {

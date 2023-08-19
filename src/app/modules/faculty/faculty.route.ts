@@ -11,11 +11,14 @@ import {
   updateFaculty,
   deleteFaculty,
 } from './faculty.controller';
+import { ENUM_USER_ROLE } from '../../../enums/user';
+import { auth } from '../../middlewares/auth';
 
 const router = Router();
 router.post(
   '/create-faculty',
   validateRequest(createFacultyZodSchema),
+  auth(ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.ADMIN),
   createFaculty
 );
 

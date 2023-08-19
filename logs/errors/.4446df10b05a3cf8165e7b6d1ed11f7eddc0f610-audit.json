@@ -1,25 +1,25 @@
 {
-    "keep": {
-        "days": true,
-        "amount": 14
+  "keep": {
+    "days": true,
+    "amount": 14
+  },
+  "auditLog": "/Users/sakin/code/mine/ph/ums/logs/errors/.4446df10b05a3cf8165e7b6d1ed11f7eddc0f610-audit.json",
+  "files": [
+    {
+      "date": 1691514087690,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-08-08-23-error.log",
+      "hash": "8e14b44cfd92469acd00cf041f71e402b65b500422fa5be3655b7d1c8e9d8fe5"
     },
-    "auditLog": "/Users/sakin/code/mine/ph/ums/logs/errors/.4446df10b05a3cf8165e7b6d1ed11f7eddc0f610-audit.json",
-    "files": [
-        {
-            "date": 1691514087690,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-08-08-23-error.log",
-            "hash": "8e14b44cfd92469acd00cf041f71e402b65b500422fa5be3655b7d1c8e9d8fe5"
-        },
-        {
-            "date": 1691517650752,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-09-08-00-error.log",
-            "hash": "9074614dae1967a515911304c6f1251fd2711c56fe7e52b8972c92f195a7f747"
-        },
-        {
-            "date": 1691680220199,
-            "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-10-08-21-error.log",
-            "hash": "4bdcb2c307fe12298add14bfbba65abdf0b55d254d6b7e0defc361904c6fb84c"
-        }
-    ],
-    "hashType": "sha256"
+    {
+      "date": 1691517650752,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-09-08-00-error.log",
+      "hash": "9074614dae1967a515911304c6f1251fd2711c56fe7e52b8972c92f195a7f747"
+    },
+    {
+      "date": 1691680220199,
+      "name": "/Users/sakin/code/mine/ph/ums/logs/errors/ums-2023-10-08-21-error.log",
+      "hash": "4bdcb2c307fe12298add14bfbba65abdf0b55d254d6b7e0defc361904c6fb84c"
+    }
+  ],
+  "hashType": "sha256"
 }

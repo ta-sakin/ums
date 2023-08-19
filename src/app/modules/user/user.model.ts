@@ -24,6 +24,9 @@ const UserSchema = new Schema<IUser, UserModel>(
       type: Boolean,
       default: true,
     },
+    passwordUpdatedAt: {
+      type: Date,
+    },
   },
   { timestamps: true, toJSON: { virtuals: true } }
 );
